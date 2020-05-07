@@ -24,7 +24,7 @@ extension KeyboardObserving {
             }
             
             let keyboardSize = keyboardSizeValue.cgRectValue
-            self?.keyboardWillShow(withSize: keyboardSize.size)
+            self?.keyboardWillShow(withSize: CGSize(width: keyboardSize.width, height: keyboardSize.height))
         }
         
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { [weak self] (_) in

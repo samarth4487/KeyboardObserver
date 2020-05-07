@@ -9,11 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        addKeyboardObservers()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    }
+    
+    deinit {
+        removeKeyboardObservers()
+    }
+    
+}
+
+extension ViewController: KeyboardObserving {
+    
+    func keyboardWillShow(withSize size: CGSize) {
+    }
+    
+    func keyboardWillHide() {
+    }
 }
 
